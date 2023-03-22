@@ -1,0 +1,203 @@
+body{
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    perspective: 200px;
+}
+
+.container{
+    border: 2px solid red;
+    padding: 20px;
+    width: auto;
+    text-align: center;
+}
+
+.cuadrado{
+    margin: 0;
+    padding: 0;
+    height: 250px;
+    width: 250px;
+    background: greenyellow;
+    color: black;
+    text-align: center;    
+    transition: 0.3s;
+}
+
+.a:hover{
+    transform: rotate(45deg)
+}
+.b:hover{
+    transform: rotateX(45deg);
+}
+.c:hover{
+    transform: rotateY(45deg);
+}
+.d:hover{
+    transform: rotateZ(45deg);
+}
+.e:hover{
+    transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+}
+.f:hover{
+    transform: rotate3d(1,0,0, 45deg);
+}
+.g:hover{
+    transform: rotate3d(0,1,0, 45deg);
+}
+.h:hover{
+    transform: rotate3d(0,0,1, 45deg);
+}
+.i:hover{
+    transform: rotate3d(1,0,1, 45deg);
+}
+.j:hover{
+    transform: rotate3d(0,1,1, 45deg);
+}
+
+.k:hover{
+    transform: translate(100px);
+}
+.l:hover{
+    transform: translateY(100px);
+}
+.m:hover{
+    transform: scale(2);
+}
+.n:hover{
+    transform: scale(2,0.5);
+}
+.o:hover{
+    transform: skew(20deg);
+}
+.p:hover{
+    transform: skew(20deg, 35deg);
+}
+.q:hover{
+    transform-origin: 100% 0%;
+    transform: rotate3d(0,0,1, -30deg);
+}
+
+.r{
+    background: blue;
+    animation-name: rSquare;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rSquare {
+    0%{
+        opacity: 1;
+    }      
+    50%{
+        opacity: 0.5;
+    }    
+    100%{
+        opacity: 1;
+    }    
+    
+}
+
+.s{
+    border-radius: 50%;
+    animation-name: sSquare;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: relative;
+}
+
+@keyframes sSquare {
+    0%{
+        left: 0%;
+    }
+    20%{
+        left: 45%;
+    }
+    40%{
+        left: 20%;
+    }
+    60%{
+        left: 70%;
+    }
+    80%{
+        left: 45%;
+    }
+    100%{
+        left: calc(100% - 240px);
+    }
+}
+
+.t{
+    display: flex;
+    animation-name: tSquare;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.73,.77,.51,1.32);
+    position: relative;
+}
+
+@keyframes tSquare {
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: calc(100% - 240px);
+    }
+}
+
+.u{
+    display: flex;
+    animation-name: uSquareA, uSquareEscalera;
+    animation-duration: 1.5s, 1s;
+    animation-iteration-count: infinite, 1;
+    animation-direction: alternate;
+    position: relative;
+    animation-timing-function: linear, ease-in-out;
+}
+
+@keyframes uSquareA {
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: calc(100% - 240px);
+    }
+}
+
+@keyframes uSquareB {
+    0%{
+        transform: translateY(0) scale(1, .8);
+    }
+    100%{
+        transform: translateY(-100px );
+    }
+}
+
+@keyframes uSquareEscalera {
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translateY(500px);
+    }
+}
+
+.v:hover{
+    transform: skew(20deg);
+}
+.w:hover{
+    transform: skew(20deg, 35deg);
+}
+.x:hover{
+    transform-origin: 100% 0%;
+    transform: rotate3d(0,0,1, -30deg);
+}
+.y:hover{
+    transform: skew(20deg, 35deg);
+}
+.z:hover{
+    transform-origin: 100% 0%;
+    transform: rotate3d(0,0,1, -30deg);
+}
