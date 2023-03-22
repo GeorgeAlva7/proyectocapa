@@ -85,27 +85,15 @@
     <script>
         const $u = document.getElementById("cuadradoU");
         $u.addEventListener('animationend', (event)=>{
-            console.log("holi");
+            if(event.animationName === 'uSquareB'){
+                $u.style.animationName = 'uSquareA, uSquareEscalera';
+                $u.style.animationDuration = '3s';
+            }
         })
     </script>
-    <div class="container">
-        <div class="cuadrado v">v</div>
-    </div>
 
     <hr>
 
-    <div class="container">
-        <div class="cuadrado w">w</div>
-    </div>
-    <div class="container">
-        <div class="cuadrado x">x</div>
-    </div>
-    <div class="container">
-        <div class="cuadrado y">y</div>
-    </div>
-    <div class="container">
-        <div class="cuadrado z">z</div>
-    </div>
-
+    <a href="animajs.html">siguiente capitulo</a>
 </body>
 </html>
