@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            /*height: 100vh;*/
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .btn{
+            text-align: center;
+            padding: .6em .8em;
+            border: none;
+            color: #000;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: inset 0 -.2em rgba(0,0,0, .2);
+            outline: 0;
+            transition: .2s;
+            will-change: transform;
+        }
+        
+        .btn.primary{
+            background: #7dc800;
+        }
+        .btn.blue{
+            background: #003e9a;
+            color: white;
+        }
+        .btn.warning{
+            background: #ff463b;
+        }
+        
+        .btn:active{
+            transform: scale(.9);
+        }
+
+        .overlay{
+            background: rgba(0,0,0, .6);
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 1.1s ease-in;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .overlay.active{
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal{
+            max-width: 500px;
+            background: white;
+            animation: modalIn .8s forwards;
+            padding: 2em;
+            border-radius: .5em;
+        }
+
+        @keyframes modalIn {
+            0%{
+                transform: translateY(-3000px);
+            }
+            60%{
+                transform: translateY(25px);
+            }
+            75%{
+                transform: translateY(-10px);
+            }
+            90%{
+                transform: translateY(5px);
+            }
+        }
+
+        @keyframes modalOut {
+            0%{
+                transform: translateY(5px);
+            }
+            60%{
+                transform: translateY(-10px);
+            }
+            75%{
+                transform: translateY(25px);
+            }
+            100%{
+                transform: translateY(-3000px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="aparece btn blue" id="appear_modal">Aparecer overlay</button>
+    <div class="overlay" id="overlay">
+        <div class="modal" id="modal">
+            <h1>ATENCION!</h1>
+            <p>estas a punto de crear una ventana</p>
+            <p>te gusto?</p>
+            <div class="modal-buttons">
+                <button class="btn primary" id="hide_modal">Si, esta chido</button>
+                <button class="btn warning">No :c</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const $hidebutton = document.getElementById('hide-modal');
+        const $modal = document.getElementById('modal');
+        const $overlay = document.getElementById('overlay');
+        
+        const $appear_modal = document.getElementById('appear-modal');
+
+        hide_modal.addEventListener('click', (event) => {
+            //console.log('holi');
+            $modal.style.animation = 'modalOut .8s forwards';
+            $overlay.classList.remove('active');
+        });
+
+        appear_modal.addEventListener('click', (event) => {
+            $modal.style.animation = 'modalIn .8s forwards';
+            $overlay.classList.add('active');
+        });
+    </script>
+</body>
+</html>
